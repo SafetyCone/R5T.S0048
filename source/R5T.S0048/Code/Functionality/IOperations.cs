@@ -15,7 +15,7 @@ namespace R5T.S0048
 	{
         public bool NoCheckEolTargetFrameworkElementOrTrue(string projectFilePath)
 		{
-            var isOfInterest = ProjectFileOperator.Instance.InQueryProjectFileContext(
+            var isOfInterest = ProjectFileOperator.Instance.InQueryProjectFileContext_Synchronous(
                 projectFilePath,
                 this.NoCheckEolTargetFrameworkElementOrTrue);
 

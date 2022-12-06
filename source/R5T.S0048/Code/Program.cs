@@ -13,11 +13,12 @@ namespace R5T.S0048
             //await ProjectFileScripts.Instance.Create_OnlyProjectElement();
             //await ProjectFileScripts.Instance.Create_Library();
             //await ProjectFileScripts.Instance.Create_Console();
-            await ProjectFileScripts.Instance.Create_WebServerForBlazorClient();
+            //await ProjectFileScripts.Instance.Create_WebServerForBlazorClient();
             //await ProjectFileScripts.Instance.Create_WebApplication();
             //ProjectFileScripts.Instance.CreateNewNet6WebAssemblyServerProject();
             //ProjectFileScripts.Instance.FindAllNet5ProjectsWithoutCheckEolTargetFrameworkOrTrue();
             //ProjectFileScripts.Instance.UpdateAllNet5ProjectsWithoutCheckEolTargetFrameworkOrTrue();
+            await ProjectFileScripts.Instance.Is_RazorComponentsLibrary();
         }
     }
 }

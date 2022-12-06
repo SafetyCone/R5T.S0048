@@ -13,6 +13,25 @@ namespace R5T.S0048
 	[FunctionalityMarker]
 	public partial interface IProjectFileScripts : IFunctionalityMarker
 	{
+		/// <summary>
+		/// Script testing logic to determine if a project is a Razor components library.
+		/// </summary>
+		public async Task Is_RazorComponentsLibrary()
+		{
+            /// Inputs.
+            var projectFilePath =
+                //Instances.ProjectFilePaths.Example
+                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.E0065.Private\source\R5T.E0065.R002\R5T.E0065.R002.csproj"
+                ;
+
+
+            /// Run.
+            var isRazorComponentsLibrary = await F0081.ProjectFileOperations.Instance.Is_RazorComponentsLibrary(
+                projectFilePath);
+
+			Console.WriteLine($"{isRazorComponentsLibrary}: is Razor components library:\n{projectFilePath}");
+        }
+
 		public async Task Create_WebApplication()
 		{
             /// Inputs.
