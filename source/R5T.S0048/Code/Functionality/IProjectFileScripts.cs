@@ -13,10 +13,81 @@ namespace R5T.S0048
 	[FunctionalityMarker]
 	public partial interface IProjectFileScripts : IFunctionalityMarker
 	{
-		/// <summary>
-		/// Script testing logic to determine if a project is a Razor components library.
+        public async Task New_DeployScripts()
+        {
+            /// Inputs.
+            var projectFilePath =
+                Instances.ProjectFilePaths.Example
+                ;
+
+
+            /// Run.
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_DeployScripts(projectFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
+        }
+
+        public async Task New_WindowsFormsLibrary()
+        {
+            /// Inputs.
+            var projectFilePath =
+                Instances.ProjectFilePaths.Example
+                ;
+
+
+            /// Run.
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_WindowsFormsLibrary(projectFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
+        }
+
+		public async Task New_WindowFormsApplication()
+		{
+            /// Inputs.
+            var projectFilePath =
+                Instances.ProjectFilePaths.Example
+                ;
+
+
+            /// Run.
+            await ProjectFileOperations.Instance.NewProjectFile_WindowsFormsApplication(projectFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
+        }
+
+        public async Task New_Library()
+        {
+            /// Inputs.
+            var projectFilePath =
+                Instances.ProjectFilePaths.Example
+                ;
+
+
+            /// Run.
+            await ProjectFileOperations.Instance.NewProjectFile_Library(projectFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
+        }
+
+        /// <summary>
+		/// Creates a project file with *only* the project element.
 		/// </summary>
-		public async Task Is_RazorComponentsLibrary()
+		public async Task New_OnlyProjectElement()
+        {
+            /// Inputs.
+            var projectFilePath = Instances.ProjectFilePaths.Example;
+
+
+            /// Run.
+            await ProjectFileOperations.Instance.NewProjectFile_OnlyProjectElement(projectFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
+        }
+
+        /// <summary>
+        /// Script testing logic to determine if a project is a Razor components library.
+        /// </summary>
+        public async Task Is_RazorComponentsLibrary()
 		{
             /// Inputs.
             var projectFilePath =
@@ -32,7 +103,7 @@ namespace R5T.S0048
 			Console.WriteLine($"{isRazorComponentsLibrary}: is Razor components library:\n{projectFilePath}");
         }
 
-		public async Task Create_WebApplication()
+		public async Task New_WebApplication()
 		{
             /// Inputs.
             var projectFilePath =
@@ -41,14 +112,13 @@ namespace R5T.S0048
 
 
             /// Run.
-            await F0081.ProjectFileOperations.Instance.CreateNewProjectFile_Web(
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_Web(
                 projectFilePath);
 
-            F0033.NotepadPlusPlusOperator.Instance.Open(
-                projectFilePath);
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
         }
 
-		public async Task Create_WebServerForBlazorClient()
+		public async Task New_WebServerForBlazorClient()
 		{
 			/// Inputs.
 			var projectFilePath =
@@ -56,15 +126,14 @@ namespace R5T.S0048
 				;
 
 
-			/// Run.
-			await F0081.ProjectFileOperations.Instance.CreateNewProjectFile_WebServerForBlazorClient(
-				projectFilePath);
+            /// Run.
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_WebServerForBlazorClient(
+                projectFilePath);
 
-			F0033.NotepadPlusPlusOperator.Instance.Open(
-				projectFilePath);
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
 		}
 
-		public async Task Create_Console()
+		public async Task New_Console()
         {
             /// Inputs.
             var projectFilePath =
@@ -73,27 +142,79 @@ namespace R5T.S0048
 
 
             /// Run.
-            await F0081.ProjectFileOperations.Instance.CreateNewProjectFile_Console(
-                projectFilePath);
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_Console(projectFilePath);
 
-            F0033.NotepadPlusPlusOperator.Instance.Open(
-                projectFilePath);
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
         }
 
-        public async Task Create_Library()
-		{
+        public async Task New_Net6WebAssemblyServerProject()
+        {
             /// Inputs.
             var projectFilePath =
-				Instances.ProjectFilePaths.Example
-				;
+                Instances.ProjectFilePaths.Example
+                ;
 
 
-			/// Run.
-			await F0081.ProjectFileOperations.Instance.CreateNewProjectFile_Library(
-				projectFilePath);
+            /// Run.
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_Net6WebAssemblyServerProject(projectFilePath);
 
-            F0033.NotepadPlusPlusOperator.Instance.Open(
-                projectFilePath);
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
+        }
+
+        public async Task New_OnlyProjectElementWithSdk()
+        {
+            /// Inputs.
+            var projectFilePath =
+                Instances.ProjectFilePaths.Example
+                ;
+
+
+            /// Run.
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_OnlyProjectElementWithSdk(projectFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
+        }
+
+        public async Task New_RazorClassLibrary()
+        {
+            /// Inputs.
+            var projectFilePath =
+                Instances.ProjectFilePaths.Example
+                ;
+
+
+            /// Run.
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_RazorClassLibrary(projectFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
+        }
+
+        public async Task New_WebBlazorClient()
+        {
+            /// Inputs.
+            var projectFilePath =
+                Instances.ProjectFilePaths.Example
+                ;
+
+
+            /// Run.
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_WebBlazorClient(projectFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
+        }
+
+        public async Task New_WebStaticRazorComponents()
+        {
+            /// Inputs.
+            var projectFilePath =
+                Instances.ProjectFilePaths.Example
+                ;
+
+
+            /// Run.
+            await F0081.ProjectFileOperations.Instance.NewProjectFile_WebStaticRazorComponents(projectFilePath);
+
+            F0033.NotepadPlusPlusOperator.Instance.Open(projectFilePath);
         }
 
         /// <summary>
@@ -146,50 +267,5 @@ namespace R5T.S0048
 				Z0015.FilePaths.Instance.OutputTextFilePath,
 				projectsOfInterest);
 		}
-
-		public void CreateNewNet6WebAssemblyServerProject()
-        {
-			/// Inputs.
-			var projectFilePath = Instances.ProjectFilePaths.Example;
-
-
-			/// Run.
-			var projectElement = Instances.ProjectXmlOperator.CreateNew();
-
-			Instances.ProjectXmlOperator.SetSdk(
-				projectElement,
-				ProjectSdkStrings.Instance.Web);
-
-			Instances.ProjectXmlOperator.SetTargetFramework(
-				projectElement,
-				TargetFrameworkMonikerStrings.Instance.NET_6);
-
-			var blazorWebAssemblyServer = Z0020.Packages.Instance.Microsoft_AspNetCore_Components_WebAssembly_Server;
-			Instances.ProjectXmlOperator.AddPackageReference_Idempotent(
-				projectElement,
-				blazorWebAssemblyServer.Identity,
-				blazorWebAssemblyServer.Version);
-
-			Operations.Instance.OutputToFileAndOpen(
-				projectElement,
-				projectFilePath);
-		}
-
-		/// <summary>
-		/// Creates a project file with *only* the project element.
-		/// </summary>
-		public async Task Create_OnlyProjectElement()
-        {
-            /// Inputs.
-            var projectFilePath = Instances.ProjectFilePaths.Example;
-
-
-			/// Run.
-			await F0081.ProjectFileOperations.Instance.Create_OnlyProjectElement(
-				projectFilePath);
-
-            F0033.NotepadPlusPlusOperator.Instance.Open(
-				projectFilePath);
-        }
 	}
 }
