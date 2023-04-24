@@ -10,7 +10,7 @@ namespace R5T.S0048
         {
             //await ProjectFileOperations.Instance.Resolve_NETSDK1138_TargetFrameworkOutOfSupportWarning_NoCheck();
 
-            //await ProjectFileScripts.Instance.New_OnlyProjectElement();
+            await ProjectFileScripts.Instance.New_OnlyProjectElement();
             //await ProjectFileScripts.Instance.New_Library();
             //await ProjectFileScripts.Instance.New_Console();
             //await ProjectFileScripts.Instance.New_WebServerForBlazorClient();
@@ -22,7 +22,7 @@ namespace R5T.S0048
             //await ProjectFileScripts.Instance.New_WebStaticRazorComponents();
             //await ProjectFileScripts.Instance.New_WindowFormsApplication();
             //await ProjectFileScripts.Instance.New_WindowsFormsLibrary();
-            await ProjectFileScripts.Instance.New_DeployScripts();
+            //await ProjectFileScripts.Instance.New_DeployScripts();
 
             //await ProjectFileScripts.Instance.Is_RazorComponentsLibrary();
 
