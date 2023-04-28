@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 
 using R5T.F0020;
 using R5T.T0132;
+using R5T.T0159.Extensions;
 
 
 namespace R5T.S0048
@@ -78,7 +79,7 @@ namespace R5T.S0048
 		{
 			var output = F0082.FileSystemOperator.Instance.GetAllProjectFilePaths_FromRepositoriesDirectoryPaths(
 				Z0022.RepositoriesDirectoryPaths.Instance.AllOfMine,
-				logger);
+				logger.ToTextOutput());
 
 			return output;
 		}
